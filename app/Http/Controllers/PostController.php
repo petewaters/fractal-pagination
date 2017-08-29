@@ -15,6 +15,7 @@ class PostController extends Controller
 
         return fractal()
             ->collection($posts)
+            ->parseIncludes(['user'])
             ->transformWith(new PostTransformer);
     }
 }
